@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3111042D2B717C5A00FA6350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3111042C2B717C5A00FA6350 /* AppDelegate.swift */; };
+		3111042F2B717C5A00FA6350 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3111042E2B717C5A00FA6350 /* GameScene.sks */; };
+		311104312B717C5A00FA6350 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 311104302B717C5A00FA6350 /* Actions.sks */; };
+		311104332B717C5A00FA6350 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104322B717C5A00FA6350 /* GameScene.swift */; };
+		311104352B717C5A00FA6350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104342B717C5A00FA6350 /* ViewController.swift */; };
+		311104372B717C5B00FA6350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 311104362B717C5B00FA6350 /* Assets.xcassets */; };
+		3111043A2B717C5B00FA6350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311104382B717C5B00FA6350 /* Main.storyboard */; };
+		311104452B717C5B00FA6350 /* AS_ScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104442B717C5B00FA6350 /* AS_ScrambleTests.swift */; };
+		3111044F2B717C5B00FA6350 /* AS_ScrambleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3111044E2B717C5B00FA6350 /* AS_ScrambleUITests.swift */; };
+		311104512B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104502B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		311104412B717C5B00FA6350 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 311104212B717C5A00FA6350 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 311104282B717C5A00FA6350;
+			remoteInfo = "AS-Scramble";
+		};
+		3111044B2B717C5B00FA6350 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 311104212B717C5A00FA6350 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 311104282B717C5A00FA6350;
+			remoteInfo = "AS-Scramble";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		311104292B717C5A00FA6350 /* AS-Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AS-Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3111042C2B717C5A00FA6350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3111042E2B717C5A00FA6350 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		311104302B717C5A00FA6350 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		311104322B717C5A00FA6350 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		311104342B717C5A00FA6350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		311104362B717C5B00FA6350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		311104392B717C5B00FA6350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3111043B2B717C5B00FA6350 /* AS_Scramble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AS_Scramble.entitlements; sourceTree = "<group>"; };
+		311104402B717C5B00FA6350 /* AS-ScrambleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AS-ScrambleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		311104442B717C5B00FA6350 /* AS_ScrambleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_ScrambleTests.swift; sourceTree = "<group>"; };
+		3111044A2B717C5B00FA6350 /* AS-ScrambleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AS-ScrambleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3111044E2B717C5B00FA6350 /* AS_ScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_ScrambleUITests.swift; sourceTree = "<group>"; };
+		311104502B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_ScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		311104262B717C5A00FA6350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3111043D2B717C5B00FA6350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311104472B717C5B00FA6350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		311104202B717C5A00FA6350 = {
+			isa = PBXGroup;
+			children = (
+				3111042B2B717C5A00FA6350 /* AS-Scramble */,
+				311104432B717C5B00FA6350 /* AS-ScrambleTests */,
+				3111044D2B717C5B00FA6350 /* AS-ScrambleUITests */,
+				3111042A2B717C5A00FA6350 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3111042A2B717C5A00FA6350 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				311104292B717C5A00FA6350 /* AS-Scramble.app */,
+				311104402B717C5B00FA6350 /* AS-ScrambleTests.xctest */,
+				3111044A2B717C5B00FA6350 /* AS-ScrambleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3111042B2B717C5A00FA6350 /* AS-Scramble */ = {
+			isa = PBXGroup;
+			children = (
+				3111042C2B717C5A00FA6350 /* AppDelegate.swift */,
+				3111042E2B717C5A00FA6350 /* GameScene.sks */,
+				311104302B717C5A00FA6350 /* Actions.sks */,
+				311104322B717C5A00FA6350 /* GameScene.swift */,
+				311104342B717C5A00FA6350 /* ViewController.swift */,
+				311104362B717C5B00FA6350 /* Assets.xcassets */,
+				311104382B717C5B00FA6350 /* Main.storyboard */,
+				3111043B2B717C5B00FA6350 /* AS_Scramble.entitlements */,
+			);
+			path = "AS-Scramble";
+			sourceTree = "<group>";
+		};
+		311104432B717C5B00FA6350 /* AS-ScrambleTests */ = {
+			isa = PBXGroup;
+			children = (
+				311104442B717C5B00FA6350 /* AS_ScrambleTests.swift */,
+			);
+			path = "AS-ScrambleTests";
+			sourceTree = "<group>";
+		};
+		3111044D2B717C5B00FA6350 /* AS-ScrambleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3111044E2B717C5B00FA6350 /* AS_ScrambleUITests.swift */,
+				311104502B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift */,
+			);
+			path = "AS-ScrambleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		311104282B717C5A00FA6350 /* AS-Scramble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 311104542B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-Scramble" */;
+			buildPhases = (
+				311104252B717C5A00FA6350 /* Sources */,
+				311104262B717C5A00FA6350 /* Frameworks */,
+				311104272B717C5A00FA6350 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AS-Scramble";
+			productName = "AS-Scramble";
+			productReference = 311104292B717C5A00FA6350 /* AS-Scramble.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3111043F2B717C5B00FA6350 /* AS-ScrambleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 311104572B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-ScrambleTests" */;
+			buildPhases = (
+				3111043C2B717C5B00FA6350 /* Sources */,
+				3111043D2B717C5B00FA6350 /* Frameworks */,
+				3111043E2B717C5B00FA6350 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				311104422B717C5B00FA6350 /* PBXTargetDependency */,
+			);
+			name = "AS-ScrambleTests";
+			productName = "AS-ScrambleTests";
+			productReference = 311104402B717C5B00FA6350 /* AS-ScrambleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		311104492B717C5B00FA6350 /* AS-ScrambleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3111045A2B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-ScrambleUITests" */;
+			buildPhases = (
+				311104462B717C5B00FA6350 /* Sources */,
+				311104472B717C5B00FA6350 /* Frameworks */,
+				311104482B717C5B00FA6350 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3111044C2B717C5B00FA6350 /* PBXTargetDependency */,
+			);
+			name = "AS-ScrambleUITests";
+			productName = "AS-ScrambleUITests";
+			productReference = 3111044A2B717C5B00FA6350 /* AS-ScrambleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		311104212B717C5A00FA6350 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					311104282B717C5A00FA6350 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					3111043F2B717C5B00FA6350 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 311104282B717C5A00FA6350;
+					};
+					311104492B717C5B00FA6350 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 311104282B717C5A00FA6350;
+					};
+				};
+			};
+			buildConfigurationList = 311104242B717C5A00FA6350 /* Build configuration list for PBXProject "AS-Scramble" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 311104202B717C5A00FA6350;
+			productRefGroup = 3111042A2B717C5A00FA6350 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				311104282B717C5A00FA6350 /* AS-Scramble */,
+				3111043F2B717C5B00FA6350 /* AS-ScrambleTests */,
+				311104492B717C5B00FA6350 /* AS-ScrambleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		311104272B717C5A00FA6350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3111042F2B717C5A00FA6350 /* GameScene.sks in Resources */,
+				311104372B717C5B00FA6350 /* Assets.xcassets in Resources */,
+				311104312B717C5A00FA6350 /* Actions.sks in Resources */,
+				3111043A2B717C5B00FA6350 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3111043E2B717C5B00FA6350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311104482B717C5B00FA6350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		311104252B717C5A00FA6350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311104352B717C5A00FA6350 /* ViewController.swift in Sources */,
+				311104332B717C5A00FA6350 /* GameScene.swift in Sources */,
+				3111042D2B717C5A00FA6350 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3111043C2B717C5B00FA6350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311104452B717C5B00FA6350 /* AS_ScrambleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		311104462B717C5B00FA6350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3111044F2B717C5B00FA6350 /* AS_ScrambleUITests.swift in Sources */,
+				311104512B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		311104422B717C5B00FA6350 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 311104282B717C5A00FA6350 /* AS-Scramble */;
+			targetProxy = 311104412B717C5B00FA6350 /* PBXContainerItemProxy */;
+		};
+		3111044C2B717C5B00FA6350 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 311104282B717C5A00FA6350 /* AS-Scramble */;
+			targetProxy = 3111044B2B717C5B00FA6350 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		311104382B717C5B00FA6350 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311104392B717C5B00FA6350 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		311104522B717C5B00FA6350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		311104532B717C5B00FA6350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		311104552B717C5B00FA6350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AS-Scramble/AS_Scramble.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-Scramble";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		311104562B717C5B00FA6350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AS-Scramble/AS_Scramble.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-Scramble";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		311104582B717C5B00FA6350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-ScrambleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AS-Scramble.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AS-Scramble";
+			};
+			name = Debug;
+		};
+		311104592B717C5B00FA6350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-ScrambleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AS-Scramble.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AS-Scramble";
+			};
+			name = Release;
+		};
+		3111045B2B717C5B00FA6350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-ScrambleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "AS-Scramble";
+			};
+			name = Debug;
+		};
+		3111045C2B717C5B00FA6350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.example.AS-ScrambleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "AS-Scramble";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		311104242B717C5A00FA6350 /* Build configuration list for PBXProject "AS-Scramble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311104522B717C5B00FA6350 /* Debug */,
+				311104532B717C5B00FA6350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		311104542B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-Scramble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311104552B717C5B00FA6350 /* Debug */,
+				311104562B717C5B00FA6350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		311104572B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-ScrambleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311104582B717C5B00FA6350 /* Debug */,
+				311104592B717C5B00FA6350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3111045A2B717C5B00FA6350 /* Build configuration list for PBXNativeTarget "AS-ScrambleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3111045B2B717C5B00FA6350 /* Debug */,
+				3111045C2B717C5B00FA6350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 311104212B717C5A00FA6350 /* Project object */;
+}
