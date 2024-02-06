@@ -9,20 +9,18 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
-    private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
-    private var spaceCraft : SKShapeNode?
+    private var spaceCraft : SKSpriteNode?
+    
+    private var enemies = [SKSpriteNode?]()
     
     override func didMove(to view: SKView) {
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        
+        self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
+        
+        self.spaceCraft?.color = SKColor.blue
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -77,10 +75,18 @@ class GameScene: SKScene {
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
-        /*case 0x31:
-            if let label = self.label {
-                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            }*/
+        case 0x7D: // Down
+            if !spaceCraft!.hasActions() {
+                let moveAction = SKAction.moveBy(x: 0, y: -35, duration: 0)
+                self.spaceCraft?.run(moveAction)
+            }
+        
+        case 0x7E: // Up
+            if  !spaceCraft!.hasActions() && (spaceCraft!.position.y + spaceCraft!.size.height / 2 < self.size.height / 2 - 50) {
+                let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
+                self.spaceCraft?.run(moveAction)
+            }
+            
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }
