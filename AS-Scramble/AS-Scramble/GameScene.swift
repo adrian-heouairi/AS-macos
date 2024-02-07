@@ -16,24 +16,21 @@ class GameScene: SKScene {
     private var enemies = [SKSpriteNode?]()
     
     override func didMove(to view: SKView) {
-        
+        for i in 0...4 {
+            let spriteSize = CGSize(width: 50, height: 50) // Adjust size as needed
+            let sprite = SKSpriteNode(color: .red, size: spriteSize)
+            sprite.physicsBody?.affectedByGravity = false;
+            sprite.physicsBody?.friction = 0;
+            sprite.physicsBody?.velocity.dx = -150;
+            sprite.physicsBody?.velocity.dy = 0;
+            sprite.position.x = Float.random(in: 0...UInt32.max);          self.enemies.append(sprite)
+            self.addChild(sprite)
+            
+        }
         
         self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
         
         self.spaceCraft?.color = SKColor.blue
-        
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
-        
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
     }
     
     
@@ -80,7 +77,7 @@ class GameScene: SKScene {
                 let moveAction = SKAction.moveBy(x: 0, y: -35, duration: 0)
                 self.spaceCraft?.run(moveAction)
             }
-        
+            
         case 0x7E: // Up
             if  !spaceCraft!.hasActions() && (spaceCraft!.position.y + spaceCraft!.size.height / 2 < self.size.height / 2 - 50) {
                 let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
@@ -92,8 +89,9 @@ class GameScene: SKScene {
         }
     }
     
-      
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
     }
 }

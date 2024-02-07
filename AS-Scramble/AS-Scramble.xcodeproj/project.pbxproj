@@ -17,6 +17,7 @@
 		311104452B717C5B00FA6350 /* AS_ScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104442B717C5B00FA6350 /* AS_ScrambleTests.swift */; };
 		3111044F2B717C5B00FA6350 /* AS_ScrambleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3111044E2B717C5B00FA6350 /* AS_ScrambleUITests.swift */; };
 		311104512B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311104502B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift */; };
+		312FE40E2B73DC9100704E9E /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FE40D2B73DC9100704E9E /* Enemy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3111044A2B717C5B00FA6350 /* AS-ScrambleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AS-ScrambleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3111044E2B717C5B00FA6350 /* AS_ScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_ScrambleUITests.swift; sourceTree = "<group>"; };
 		311104502B717C5B00FA6350 /* AS_ScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AS_ScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		312FE40D2B73DC9100704E9E /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				3111042E2B717C5A00FA6350 /* GameScene.sks */,
 				311104302B717C5A00FA6350 /* Actions.sks */,
 				311104322B717C5A00FA6350 /* GameScene.swift */,
+				312FE40D2B73DC9100704E9E /* Enemy.swift */,
 				311104342B717C5A00FA6350 /* ViewController.swift */,
 				311104362B717C5B00FA6350 /* Assets.xcassets */,
 				311104382B717C5B00FA6350 /* Main.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				312FE40E2B73DC9100704E9E /* Enemy.swift in Sources */,
 				311104352B717C5A00FA6350 /* ViewController.swift in Sources */,
 				311104332B717C5A00FA6350 /* GameScene.swift in Sources */,
 				3111042D2B717C5A00FA6350 /* AppDelegate.swift in Sources */,
