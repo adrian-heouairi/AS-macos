@@ -34,6 +34,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2)
         } while posIntersectsEnemy(pos)
 
+        print("Returning position", pos)
+        
         return pos
     }
     
@@ -63,7 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
             self.addChild(gameOverLabel)
         } else if collision == 2 | 4 {
-            var bullet: SKNode
+            let bullet: SKNode
             var enemy: SKNode
             if contact.bodyA.categoryBitMask == 2 {
                 enemy = contact.bodyA.node!
