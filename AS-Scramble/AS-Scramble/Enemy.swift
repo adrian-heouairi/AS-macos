@@ -20,9 +20,9 @@ class Enemy: SKSpriteNode {
         self.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         
         // Set category, collision, and contact masks
-        self.physicsBody?.categoryBitMask = 1 // Example value, adjust as needed
-        self.physicsBody?.collisionBitMask = 0 // Example value, adjust as needed
-        self.physicsBody?.contactTestBitMask = 0 // Example value, adjust as needed
+        self.physicsBody?.categoryBitMask = 2 // Example value, adjust as needed
+        self.physicsBody?.collisionBitMask = 1 // Example value, adjust as needed
+        self.physicsBody?.contactTestBitMask = 1 // Example value, adjust as needed
     }
     
     required init?(coder aDecoder: NSCoder) {

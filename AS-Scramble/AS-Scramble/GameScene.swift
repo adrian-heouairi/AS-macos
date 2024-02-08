@@ -19,11 +19,13 @@ class GameScene: SKScene {
     private var enemies = [Enemy]()
     
     func getPosInLobby() -> CGPoint {
-        return CGPoint(x: 512 + 200, y: 768 / 2 - 100)
+        // TODO Intersect
+        let randomY = Int.random(in: Int(-self.size.height / 4)...Int(self.size.height / 2))
+        return CGPoint(x: 512 + 200, y: randomY)
     }
     
     override func didMove(to view: SKView) {
-        for i in 0...4 {
+        for i in 0...1 {
             self.enemies.append(Enemy())
             self.addChild(self.enemies[i])
             self.enemies[i].position = getPosInLobby()
