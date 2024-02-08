@@ -16,13 +16,13 @@ class Enemy: SKSpriteNode {
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.mass = 0
         self.physicsBody?.linearDamping = 0
+        self.physicsBody?.angularDamping = 0
         self.physicsBody?.friction = 0
         self.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         
         // Set category, collision, and contact masks
         self.physicsBody?.categoryBitMask = 2 // Example value, adjust as needed
-        self.physicsBody?.collisionBitMask = 1 // Example value, adjust as needed
-        self.physicsBody?.contactTestBitMask = 1 // Example value, adjust as needed
+        self.physicsBody?.contactTestBitMask = 0b101 // Example value, adjust as needed
     }
     
     required init?(coder aDecoder: NSCoder) {

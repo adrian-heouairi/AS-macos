@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var enemies = [Enemy]()
     
+    private var bullets = [Bullet]()
+    
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
         let rectangle = CGRect(x: pos.x, y: pos.y, width: 50, height: 50)
         
@@ -65,6 +67,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gameOverLabel.fontColor = SKColor.white
             gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
             self.addChild(gameOverLabel)
+        } else if collision == 2 | 4 {
+            let bullet: SKNode
+            let enemy: SKNode
+            if contact.bodyA.categoryBitMask == 2 {
+                enemy = contact.bodyA.node!
+                bullet = contact.bodyB.node!
+            } else {
+                enemy = contact.bodyB.node!
+                bullet = contact.bodyA.node!
+            }
+            
+            self.bullets.remove(at: self.bullets.firstIndex(of: bullet as! Bullet)!)
+            bullet.removeFromParent()
+            
+            enemy.position = self.getPosInLobby()
         }
     }
     
@@ -118,6 +135,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.spaceCraft?.run(moveAction)
             }
             
+        case 0x31: // Space
+            var bullet = Bullet()
+            let bulletX = self.spaceCraft!.position.x + 100
+            bullet.position = CGPoint(x: bulletX, y: self.spaceCraft!.position.y)
+            self.bullets.append(bullet)
+            self.addChild(bullet)
+            
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }
@@ -128,6 +152,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for e in enemies {
             if e.position.x < -self.size.width / 2 {
                 e.position = self.getPosInLobby()
+            }
+        }
+        
+        for b in bullets {
+            if b.position.x > self.size.width / 2 {
+                self.bullets.remove(at: self.bullets.firstIndex(of: b)!)
+                b.removeFromParent()
             }
         }
     }
