@@ -20,9 +20,8 @@ class Bullet: SKSpriteNode {
         self.physicsBody?.friction = 0
         self.physicsBody?.velocity = CGVector(dx: 150, dy: 0)
         
-        // Set category, collision, and contact masks
-        self.physicsBody?.categoryBitMask = 4 // Example value, adjust as needed
-        self.physicsBody?.contactTestBitMask = 2 // Example value, adjust as needed
+        self.physicsBody?.categoryBitMask = 4
+        self.physicsBody?.contactTestBitMask = 2
     }
     
     required init?(coder aDecoder: NSCoder) {

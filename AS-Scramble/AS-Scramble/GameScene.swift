@@ -8,11 +8,6 @@
 import SpriteKit
 import GameplayKit
 
-// TODO Collision
-// Montagnes
-// Bullet
-// dans update if dépasse gauche enemy get pos in lobby
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
     private var spaceCraft : SKSpriteNode?
     
@@ -68,8 +63,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
             self.addChild(gameOverLabel)
         } else if collision == 2 | 4 {
-            let bullet: SKNode
-            let enemy: SKNode
+            var bullet: SKNode
+            var enemy: SKNode
             if contact.bodyA.categoryBitMask == 2 {
                 enemy = contact.bodyA.node!
                 bullet = contact.bodyB.node!
@@ -82,44 +77,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             bullet.removeFromParent()
             
             enemy.position = self.getPosInLobby()
+            enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         }
     }
-    
-    /*func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
-    }
-    
-    override func mouseDown(with event: NSEvent) {
-        self.touchDown(atPoint: event.location(in: self))
-    }
-    
-    override func mouseDragged(with event: NSEvent) {
-        self.touchMoved(toPoint: event.location(in: self))
-    }
-    
-    override func mouseUp(with event: NSEvent) {
-        self.touchUp(atPoint: event.location(in: self))
-    }*/
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {

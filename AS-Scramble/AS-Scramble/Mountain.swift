@@ -20,10 +20,9 @@ class Mountain: SKSpriteNode {
         self.physicsBody?.friction = 0
         self.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         
-        // Set category, collision, and contact masks
-        self.physicsBody?.categoryBitMask = 8 // Example value, adjust as needed
+        self.physicsBody?.categoryBitMask = 8
         //self.physicsBody?.collisionBitMask = 0
-        self.physicsBody?.contactTestBitMask = 1 // Example value, adjust as needed
+        self.physicsBody?.contactTestBitMask = 1
     }
     
     required init?(coder aDecoder: NSCoder) {
