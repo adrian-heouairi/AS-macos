@@ -8,33 +8,33 @@
 import SpriteKit
 import GameplayKit
 
+// TODO Collision
+// Montagnes
+// Bullet
+// dans update if dépasse gauche enemy get pos in lobby
+
 class GameScene: SKScene {
-    private var spinnyNode : SKShapeNode?
-    
     private var spaceCraft : SKSpriteNode?
     
-    private var enemies = [SKSpriteNode?]()
+    private var enemies = [Enemy]()
+    
+    func getPosInLobby() -> CGPoint {
+        return CGPoint(x: 512 + 200, y: 768 / 2 - 100)
+    }
     
     override func didMove(to view: SKView) {
         for i in 0...4 {
-            let spriteSize = CGSize(width: 50, height: 50) // Adjust size as needed
-            let sprite = SKSpriteNode(color: .red, size: spriteSize)
-            sprite.physicsBody?.affectedByGravity = false;
-            sprite.physicsBody?.friction = 0;
-            sprite.physicsBody?.velocity.dx = -150;
-            sprite.physicsBody?.velocity.dy = 0;
-            sprite.position.x = Float.random(in: 0...UInt32.max);          self.enemies.append(sprite)
-            self.addChild(sprite)
-            
+            self.enemies.append(Enemy())
+            self.addChild(self.enemies[i])
+            self.enemies[i].position = getPosInLobby()
         }
         
         self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
-        
         self.spaceCraft?.color = SKColor.blue
     }
     
     
-    func touchDown(atPoint pos : CGPoint) {
+    /*func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
             n.strokeColor = SKColor.green
@@ -68,7 +68,7 @@ class GameScene: SKScene {
     
     override func mouseUp(with event: NSEvent) {
         self.touchUp(atPoint: event.location(in: self))
-    }
+    }*/
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
@@ -79,7 +79,7 @@ class GameScene: SKScene {
             }
             
         case 0x7E: // Up
-            if  !spaceCraft!.hasActions() && (spaceCraft!.position.y + spaceCraft!.size.height / 2 < self.size.height / 2 - 50) {
+            if !spaceCraft!.hasActions() && (spaceCraft!.position.y + spaceCraft!.size.height / 2 < self.size.height / 2 - 50) {
                 let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
                 self.spaceCraft?.run(moveAction)
             }
@@ -91,7 +91,10 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
+        for e in enemies {
+            if e.position.x < -self.size.width / 2 {
+                e.position = self.getPosInLobby()
+            }
+        }
     }
 }
