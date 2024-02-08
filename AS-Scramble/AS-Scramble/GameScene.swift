@@ -59,7 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if collision == 1 | 2 {
             self.removeAllChildren()
             
-            let gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+            let gameOverLabel = SKLabelNode()
             gameOverLabel.text = "Game Over"
             gameOverLabel.fontSize = 40
             gameOverLabel.fontColor = SKColor.white
@@ -67,7 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(gameOverLabel)
         } else if collision == 2 | 4 {
             let bullet: SKNode
-            var enemy: SKNode
+            let enemy: SKNode
             if contact.bodyA.categoryBitMask == 2 {
                 enemy = contact.bodyA.node!
                 bullet = contact.bodyB.node!
@@ -79,8 +79,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.bullets.remove(at: self.bullets.firstIndex(of: bullet as! Bullet)!)
             bullet.removeFromParent()
             
-            enemy.position = self.getPosInLobby()
-            enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
+            //enemy.position = self.getPosInLobby()
+            //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         }
     }
     
