@@ -13,7 +13,7 @@ import GameplayKit
 // Bullet
 // dans update if dépasse gauche enemy get pos in lobby
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     private var spaceCraft : SKSpriteNode?
     
     private var enemies = [Enemy]()
@@ -25,6 +25,8 @@ class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        self.physicsWorld.contactDelegate = self
+        
         for i in 0...1 {
             self.enemies.append(Enemy())
             self.addChild(self.enemies[i])
@@ -35,6 +37,13 @@ class GameScene: SKScene {
         self.spaceCraft?.color = SKColor.blue
     }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == 1 | 2 {
+            exit(0)
+        }
+    }
     
     /*func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
