@@ -18,10 +18,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var enemies = [Enemy]()
     
+    func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
+        let rectangle = CGRect(x: pos.x, y: pos.y, width: 50, height: 50)
+        
+        for e in enemies {
+            if e.frame.intersects(rectangle) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func getPosInLobby() -> CGPoint {
-        // TODO Intersect
-        let randomY = Int.random(in: Int(-self.size.height / 4)...Int(self.size.height / 2))
-        return CGPoint(x: 512 + 200, y: randomY)
+        var pos = CGPoint(x: 0, y: 0)
+        repeat {
+            pos.x = self.size.width / 2 + CGFloat.random(in: 100...500)
+            pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2)
+        } while posIntersectsEnemy(pos)
+
+        return pos
     }
     
     override func didMove(to view: SKView) {
@@ -41,7 +57,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == 1 | 2 {
-            exit(0)
+            self.removeAllChildren()
+            
+            let gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+            gameOverLabel.text = "Game Over"
+            gameOverLabel.fontSize = 40
+            gameOverLabel.fontColor = SKColor.white
+            gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+            self.addChild(gameOverLabel)
         }
     }
     
