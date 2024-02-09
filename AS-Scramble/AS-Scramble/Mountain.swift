@@ -10,8 +10,8 @@ import SpriteKit
 
 class Mountain: SKSpriteNode {
     init() {
-        let size = CGSize(width: 50, height: 50)
-        super.init(texture: nil, color: .red, size: size)
+        let size = CGSize(width: 1024 / 10, height: CGFloat.random(in: 0.0...768 / 4))
+        super.init(texture: nil, color: .brown, size: size)
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.mass = 0

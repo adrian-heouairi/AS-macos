@@ -15,6 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var bullets = [Bullet]()
     
+    private var mountains = [Mountain]()
+    
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
         let rectangle = CGRect(x: pos.x, y: pos.y, width: 150, height: 150)
         
@@ -50,6 +52,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in 0...1 {
             self.addEnemy()
         }
+        
+        
         
         self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
         self.spaceCraft?.color = SKColor.blue
