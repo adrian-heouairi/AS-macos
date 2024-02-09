@@ -16,7 +16,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var bullets = [Bullet]()
     
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
-        let rectangle = CGRect(x: pos.x, y: pos.y, width: 50, height: 50)
+        let rectangle = CGRect(x: pos.x, y: pos.y, width: 150, height: 150)
         
         for e in enemies {
             if e.frame.intersects(rectangle) {
@@ -30,12 +30,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func getPosInLobby() -> CGPoint {
         var pos = CGPoint(x: 0, y: 0)
         repeat {
-            print("Doing repeat while")
             pos.x = self.size.width / 2 + CGFloat.random(in: 100...500)
-            pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2)
+            pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2 - 100)
         } while posIntersectsEnemy(pos)
-
-        print("Returning position", pos)
         
         return pos
     }
@@ -109,12 +106,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
         case 0x31: // Space
-            var bullet = Bullet()
-            let bulletX = self.spaceCraft!.position.x + 100
-            bullet.position = CGPoint(x: bulletX, y: self.spaceCraft!.position.y)
-            self.bullets.append(bullet)
-            self.addChild(bullet)
-            
+            if self.bullets.count < 5 {
+                var bullet = Bullet()
+                let bulletX = self.spaceCraft!.position.x + 100
+                bullet.position = CGPoint(x: bulletX, y: self.spaceCraft!.position.y)
+                self.bullets.append(bullet)
+                self.addChild(bullet)
+            }
+                
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }
