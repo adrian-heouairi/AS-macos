@@ -97,10 +97,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
         case 0x7D: // Down
-            if !spaceCraft.hasActions() {
+            //if !spaceCraft.hasActions() {
                 let moveAction = SKAction.moveBy(x: 0, y: -35, duration: 0)
                 self.spaceCraft.run(moveAction)
-            }
+            //}
             
         case 0x7E: // Up
             if !spaceCraft.hasActions() && (spaceCraft.position.y + spaceCraft.size.height / 2 < self.size.height / 2 - 50) {
