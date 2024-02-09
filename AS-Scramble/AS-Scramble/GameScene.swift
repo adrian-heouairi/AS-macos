@@ -112,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case 0x31: // Space
             if self.bullets.count < 5 {
                 var bullet = Bullet()
-                let bulletX = self.spaceCraft.position.x + 100
+                let bulletX = self.spaceCraft.position.x + 150
                 bullet.position = CGPoint(x: bulletX, y: self.spaceCraft.position.y)
                 self.bullets.append(bullet)
                 self.addChild(bullet)
