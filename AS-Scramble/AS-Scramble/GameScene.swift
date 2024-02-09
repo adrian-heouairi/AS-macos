@@ -18,7 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var mountains = [Mountain]()
     
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
-        let rectangle = CGRect(x: pos.x, y: pos.y, width: 150, height: 150)
+        let rectangle = CGRect(x: pos.x, y: pos.y, width: 300, height: 300)
         
         for e in enemies {
             if e.frame.intersects(rectangle) {
@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func getPosInLobby() -> CGPoint {
         var pos = CGPoint(x: 0, y: 0)
         repeat {
-            pos.x = self.size.width / 2 + CGFloat.random(in: 100...500)
+            pos.x = self.size.width / 2 + CGFloat.random(in: 100...1000)
             pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2 - 100)
         } while posIntersectsEnemy(pos)
         
