@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func getPosInLobby() -> CGPoint {
         var pos = CGPoint(x: 0, y: 0)
         repeat {
-            pos.x = self.size.width / 2 + CGFloat.random(in: 100...1000)
+            pos.x = self.size.width / 2 + CGFloat.random(in: 100...500)
             pos.y = CGFloat.random(in: -self.size.height / 4...self.size.height / 2 - 100)
         } while posIntersectsEnemy(pos)
         
