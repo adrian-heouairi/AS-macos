@@ -41,9 +41,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addEnemy() {
-        self.enemies.append(Enemy())
-        self.addChild(self.enemies[i])
-        self.enemies[i].position = getPosInLobby()
+        var enemy = Enemy()
+        enemy.position = self.getPosInLobby()
+        self.enemies.append(enemy)
+        self.addChild(enemy)
     }
     
     override func didMove(to view: SKView) {
