@@ -9,7 +9,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    private var spaceCraft : SKSpriteNode?
+    private var spaceCraft = SpaceCraft()
     
     private var enemies = [Enemy]()
     
@@ -47,16 +47,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
+        scene?.backgroundColor = .white
+        
         self.physicsWorld.contactDelegate = self
         
         for i in 0...1 {
             self.addEnemy()
         }
         
-        
-        
-        self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
-        self.spaceCraft?.color = SKColor.blue
+        self.spaceCraft.position = CGPoint(x: -self.size.width / 2 + 100, y: self.size.height / 2 - 100)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
