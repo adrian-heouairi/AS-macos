@@ -40,13 +40,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return pos
     }
     
+    func addEnemy() {
+        self.enemies.append(Enemy())
+        self.addChild(self.enemies[i])
+        self.enemies[i].position = getPosInLobby()
+    }
+    
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self
         
         for i in 0...1 {
-            self.enemies.append(Enemy())
-            self.addChild(self.enemies[i])
-            self.enemies[i].position = getPosInLobby()
+            self.addEnemy()
         }
         
         self.spaceCraft = self.childNode(withName: "spaceCraft") as? SKSpriteNode
@@ -78,6 +82,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             self.bullets.remove(at: self.bullets.firstIndex(of: bullet as! Bullet)!)
             bullet.removeFromParent()
+            
+            self.enemies.remove(at: self.enemies.firstIndex(of: enemy as! Enemy)!)
+            enemy.removeFromParent()
+            
+            self.addEnemy()
             
             //enemy.position = self.getPosInLobby()
             //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
