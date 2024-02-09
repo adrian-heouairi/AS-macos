@@ -10,7 +10,7 @@ import SpriteKit
 
 class Enemy: SKSpriteNode {
     init() {
-        let size = CGSize(width: 50, height: 50)
+        let size = CGSize(width: 200, height: 200)
         super.init(texture: SKTexture(imageNamed: "enemy"), color: .black, size: size)
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
