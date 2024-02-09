@@ -10,7 +10,7 @@ import SpriteKit
 
 class Bullet: SKSpriteNode {
     init() {
-        let size = CGSize(width: 100, height: 100)
+        let size = CGSize(width: 70, height: 70)
         super.init(texture: SKTexture(imageNamed: "bullet"), color: .black, size: size)
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
