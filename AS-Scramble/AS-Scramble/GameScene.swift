@@ -56,6 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         self.spaceCraft.position = CGPoint(x: -self.size.width / 2 + 100, y: self.size.height / 2 - 100)
+        self.addChild(self.spaceCraft)
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
