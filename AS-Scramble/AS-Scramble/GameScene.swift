@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        scene?.backgroundColor = .white
+        //scene?.backgroundColor = .white
         
         self.physicsWorld.contactDelegate = self
         
