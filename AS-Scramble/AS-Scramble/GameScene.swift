@@ -67,7 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let gameOverLabel = SKLabelNode()
             gameOverLabel.text = "Game Over"
-            gameOverLabel.fontSize = 40
+            gameOverLabel.fontSize = 80
             gameOverLabel.fontColor = SKColor.white
             gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
             self.addChild(gameOverLabel)
