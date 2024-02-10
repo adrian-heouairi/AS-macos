@@ -68,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        self.scaleMode = .resizeFill
+        //self.scaleMode = .resizeFill
         
         scoreLabel.text = "Score: \(self.score)"
         scoreLabel.fontSize = 40
