@@ -10,5 +10,5 @@
 class Constants {
     public static let SCENE_WIDTH = 1024
     public static let NB_MOUNTAINS = 10
-    public static let MOUNTAIN_WIDTH = SCENE_WIDTH / NB_MOUNTAINS + 30
+    public static let MOUNTAIN_WIDTH = Float(SCENE_WIDTH / NB_MOUNTAINS + 30)
 }
