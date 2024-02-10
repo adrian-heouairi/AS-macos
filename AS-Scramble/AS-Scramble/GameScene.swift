@@ -17,6 +17,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var mountains = [Mountain]()
     
+    private var gameOver = false
+    
+    func launchGameOver() {
+        self.gameOver = true
+        self.removeAllChildren()
+        let gameOverLabel = SKLabelNode()
+        gameOverLabel.text = "Game Over"
+        gameOverLabel.fontSize = 80
+        gameOverLabel.fontColor = SKColor.white
+        gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        self.addChild(gameOverLabel)
+    }
+    
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
         let rectangle = CGRect(x: pos.x, y: pos.y, width: 300, height: 300)
         
@@ -76,13 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == 1 | 2 {
-            self.removeAllChildren()
-            let gameOverLabel = SKLabelNode()
-            gameOverLabel.text = "Game Over"
-            gameOverLabel.fontSize = 80
-            gameOverLabel.fontColor = SKColor.white
-            gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-            self.addChild(gameOverLabel)
+            self.launchGameOver()
         } else if collision == 2 | 4 {
             let bullet: SKNode
             let enemy: SKNode
@@ -105,13 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //enemy.position = self.getPosInLobby()
             //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         } else if collision == 1 | 8 {
-            self.removeAllChildren()
-            let gameOverLabel = SKLabelNode()
-            gameOverLabel.text = "Game Over"
-            gameOverLabel.fontSize = 80
-            gameOverLabel.fontColor = SKColor.white
-            gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-            self.addChild(gameOverLabel)
+            self.launchGameOver()
         }
     }
     
@@ -142,7 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
         case 0x31: // Space
-            if self.bullets.count < 5 {
+            if !self.gameOver && self.bullets.count < 5 {
                 let bullet = Bullet()
                 let bulletX = self.spaceCraft.position.x + 50
                 bullet.position = CGPoint(x: bulletX, y: self.spaceCraft.position.y)
