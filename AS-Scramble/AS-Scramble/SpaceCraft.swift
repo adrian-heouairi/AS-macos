@@ -9,9 +9,9 @@ import SpriteKit
 
 class SpaceCraft: SKSpriteNode {
     init() {
-        let size = CGSize(width: 100, height: 150)
+        let size = CGSize(width: 150, height: 150)
         super.init(texture: SKTexture(imageNamed: "spacecraft"), color: .black, size: size)
-        self.physicsBody = SKPhysicsBody(rectangleOf: size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 150))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.mass = 0
         self.physicsBody?.linearDamping = 0
