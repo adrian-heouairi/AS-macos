@@ -8,5 +8,5 @@
 //import SpriteKit
 
 class Constants {
-    public static final MOUNTAIN_WIDTH = 1024 / 10 + 30
+    public static let MOUNTAIN_WIDTH = 1024 / 10 + 30
 }
