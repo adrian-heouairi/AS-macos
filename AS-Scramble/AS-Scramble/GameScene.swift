@@ -19,6 +19,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var gameOver = false
     
+    private var score = 0
+    private var scoreLabel = SKLabelNode()
+    
     func launchGameOver() {
         self.gameOver = true
         self.removeAllChildren()
@@ -59,7 +62,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(enemy)
     }
     
+    func incrementScore() {
+        self.score++
+        self.scoreLabel
+    }
+    
     override func didMove(to view: SKView) {
+        scoreLabel.text = "Score: \(self.score)"
+        scoreLabel.fontSize = 40
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.position = CGPoint(x: self.size.width / 2 - 150, y: self.size.height / 2 - 100)
+        scoreLabel.zPosition = 0
+        self.addChild(scoreLabel)
+        
         let backgroundImage = SKSpriteNode(imageNamed: "space")
         backgroundImage.size = self.size
         //backgroundImage.position = CGPoint(x: 0, y: 0)
