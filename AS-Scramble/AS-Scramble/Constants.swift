@@ -1,8 +1,12 @@
 //
-//  Constants.swift
+//  Enemy.swift
 //  AS-Scramble
 //
-//  Created by Abc Def on 10/02/2024.
+//  Created by user248197 on 2/7/24.
 //
 
-import Foundation
+//import SpriteKit
+
+class Constants {
+    public static final MOUNTAIN_WIDTH = 
+}
