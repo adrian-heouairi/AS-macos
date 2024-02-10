@@ -114,6 +114,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.spaceCraft.run(moveAction)
             }
             
+        case 123: // Left
+            if !spaceCraft.hasActions() && (spaceCraft.position.x + spaceCraft.size.height / 2 < self.size.height / 2 - 50) {
+                let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
+                self.spaceCraft.run(moveAction)
+            }
+            
         case 0x31: // Space
             if self.bullets.count < 5 {
                 let bullet = Bullet()
