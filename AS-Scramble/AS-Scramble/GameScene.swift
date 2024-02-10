@@ -162,5 +162,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 b.removeFromParent()
             }
         }
+        
+        let xStart = -1 * Int(Constants.MOUNTAIN_WIDTH) * Constants.REAL_NB_MOUNTAINS / 2
+        for m in mountains {
+            if Int(m.position.x) < xStart {
+                m.position = CGPoint(x: -CGFloat(xStart), y: m.position.y)
+            }
+        }
     }
 }
