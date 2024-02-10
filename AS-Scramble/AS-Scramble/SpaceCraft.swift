@@ -20,6 +20,7 @@ class SpaceCraft: SKSpriteNode {
         //self.physicsBody?.velocity = CGVector(dx: 300, dy: 0)
         
         self.physicsBody?.categoryBitMask = 1
+        self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = 2 | 8
     }
     
