@@ -27,7 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.removeAllChildren()
         let gameOverLabel = SKLabelNode()
         gameOverLabel.text = "Game Over"
-        gameOverLabel.fontSize = 80
+        gameOverLabel.fontSize = 120
         gameOverLabel.fontColor = SKColor.white
         gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.addChild(gameOverLabel)
@@ -71,7 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = "Score: \(self.score)"
         scoreLabel.fontSize = 40
         scoreLabel.fontColor = SKColor.white
-        scoreLabel.position = CGPoint(x: self.size.width / 2 - 150, y: self.size.height / 2 - 100)
+        scoreLabel.position = CGPoint(x: self.size.width / 2 - 100, y: self.size.height / 2 - 50)
         scoreLabel.zPosition = 0
         self.addChild(scoreLabel)
         
