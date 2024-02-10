@@ -21,6 +21,7 @@ class Enemy: SKSpriteNode {
         self.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
         
         self.physicsBody?.categoryBitMask = 2
+        self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = 0b101
     }
     
