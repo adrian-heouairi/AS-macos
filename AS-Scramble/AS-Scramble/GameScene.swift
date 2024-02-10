@@ -115,7 +115,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
         case 123: // Left
-            if !spaceCraft.hasActions() && (spaceCraft.position.x + spaceCraft.size.height / 2 < self.size.height / 2 - 50) {
+            if !spaceCraft.hasActions() && (spaceCraft.position.x > -self.size.width / 2) {
                 let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
