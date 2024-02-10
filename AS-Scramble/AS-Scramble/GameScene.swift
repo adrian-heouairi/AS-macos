@@ -47,6 +47,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
+        let backgroundImage = SKSpriteNode(imageNamed: "space")
+        backgroundImage.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
+        backgroundImage.zPosition = -1
+        self.addChild(backgroundImage)
         //scene?.backgroundColor = .white
         
         self.physicsWorld.contactDelegate = self
