@@ -63,8 +63,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func incrementScore() {
-        self.score++
-        self.scoreLabel
+        self.score += 1
+        self.scoreLabel.text = "Score: \(self.score)"
     }
     
     override func didMove(to view: SKView) {
@@ -106,6 +106,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if collision == 1 | 2 {
             self.launchGameOver()
         } else if collision == 2 | 4 {
+            self.incrementScore()
+            
             let bullet: SKNode
             let enemy: SKNode
             if contact.bodyA.categoryBitMask == 2 {
