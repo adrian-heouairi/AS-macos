@@ -13,6 +13,7 @@ class Constants {
     public static let NB_MOUNTAINS_ON_SCREEN = 10
     public static let REAL_NB_MOUNTAINS = NB_MOUNTAINS_ON_SCREEN + 2
     public static let MOUNTAIN_WIDTH = CGFloat(SCENE_WIDTH / NB_MOUNTAINS_ON_SCREEN + 30)
+    public static let MOUNTAIN_VELOCITY = CGVector(dx: 300, dy: 0)
     
     public static let ENEMIES_NB = 5
     
@@ -25,6 +26,7 @@ class Constants {
     
     public static let BULLET_WIDTH = 65
     public static let BULLET_HEIGHT = 65
+    public static let BULLET_VELOCITY = CGVector(dx: 300, dy: 0)
     
     
     enum KeyCodes:UInt16 {
@@ -40,13 +42,14 @@ class Constants {
     public static let BULLET_CATEGORY = 4
     public static let MOUNTAIN_CATEGORY = 8
 
-    public static func initializePhBody(width phWidth:Int,height phHeight:Int, categoryBitMask:UInt32, collisionBitMask:UInt32, contactTestMask:UInt32) -> SKPhysicsBody {
+    public static func initializePhBody(width phWidth:Int,height phHeight:Int, velocity:CGVector, categoryBitMask:UInt32, collisionBitMask:UInt32, contactTestMask:UInt32) -> SKPhysicsBody {
         let res = SKPhysicsBody(rectangleOf: CGSize(width: phWidth, height: phHeight))
             res.affectedByGravity = false
         res.mass = 0
         res.linearDamping = 0
         res.angularDamping = 0
         res.friction = 0
+        res.velocity = velocity
         
         res.categoryBitMask = categoryBitMask
         res.collisionBitMask = collisionBitMask

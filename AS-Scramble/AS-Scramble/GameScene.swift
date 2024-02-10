@@ -105,14 +105,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        if collision == 1 | 2 {
+        if collision == Constants.SPACESHIP_CATEGORY | Constants.ENEMY_CATEGORY {
             self.launchGameOver()
-        } else if collision == 2 | 4 {
+        } else if collision == Constants.ENEMY_CATEGORY | Constants.BULLET_CATEGORY {
             self.incrementScore()
             
             let bullet: SKNode
             let enemy: SKNode
-            if contact.bodyA.categoryBitMask == 2 {
+            if contact.bodyA.categoryBitMask == Constants.ENEMY_CATEGORY {
                 enemy = contact.bodyA.node!
                 bullet = contact.bodyB.node!
             } else {
@@ -122,7 +122,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             self.bullets.remove(at: self.bullets.firstIndex(of: bullet as! Bullet)!)
             bullet.removeFromParent()
-            
             self.enemies.remove(at: self.enemies.firstIndex(of: enemy as! Enemy)!)
             enemy.removeFromParent()
             
@@ -130,8 +129,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             //enemy.position = self.getPosInLobby()
             //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
-        } else if collision == 1 | 8 {
+        } else if collision == Constants.SPACESHIP_CATEGORY | Constants.MOUNTAIN_CATEGORY {
             self.launchGameOver()
+        } else if collision == Constants.BULLET_CATEGORY | Constants.MOUNTAIN_CATEGORY {
+            var bullet : Bullet
+            if contact.bodyA.categoryBitMask == Constants.BULLET_CATEGORY {
+                bullet = contact.bodyA.node as! Bullet
+            } else {
+                bullet = contact.bodyB.node as! Bullet            }
+        
+            self.bullets.remove(at: self.bullets.firstIndex(of: bullet)!)
+            bullet.removeFromParent()
         }
     }
     
