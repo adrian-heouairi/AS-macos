@@ -22,7 +22,7 @@ class SpaceCraft: SKSpriteNode {
         self.zPosition = 1
         
         self.physicsBody?.categoryBitMask = 1
-        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.collisionBitMask = 8
         self.physicsBody?.contactTestBitMask = 2 | 8
     }
     
