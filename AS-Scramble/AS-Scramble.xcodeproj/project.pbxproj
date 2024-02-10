@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280EE4882B77FCF600005D28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EE4872B77FCF600005D28 /* Constants.swift */; };
 		282539B32B76D945004C14E1 /* SpaceCraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282539B22B76D945004C14E1 /* SpaceCraft.swift */; };
 		28B278432B756B1D0070DA83 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B278422B756B1D0070DA83 /* Mountain.swift */; };
 		28B278452B756B370070DA83 /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B278442B756B370070DA83 /* Bullet.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280EE4872B77FCF600005D28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		282539B22B76D945004C14E1 /* SpaceCraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCraft.swift; sourceTree = "<group>"; };
 		28B278422B756B1D0070DA83 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		28B278442B756B370070DA83 /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		311104202B717C5A00FA6350 = {
 			isa = PBXGroup;
 			children = (
+				280EE4872B77FCF600005D28 /* Constants.swift */,
 				3111042B2B717C5A00FA6350 /* AS-Scramble */,
 				311104432B717C5B00FA6350 /* AS-ScrambleTests */,
 				3111044D2B717C5B00FA6350 /* AS-ScrambleUITests */,
@@ -281,6 +284,7 @@
 				282539B32B76D945004C14E1 /* SpaceCraft.swift in Sources */,
 				3111042D2B717C5A00FA6350 /* AppDelegate.swift in Sources */,
 				28B278452B756B370070DA83 /* Bullet.swift in Sources */,
+				280EE4882B77FCF600005D28 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
