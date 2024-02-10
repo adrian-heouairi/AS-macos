@@ -20,6 +20,8 @@ class Bullet: SKSpriteNode {
         self.physicsBody?.friction = 0
         self.physicsBody?.velocity = CGVector(dx: 300, dy: 0)
         
+        self.zPosition
+        
         self.physicsBody?.categoryBitMask = 4
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = 2
