@@ -40,7 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addEnemy() {
-        let enemy = Enemy()
+        var enemy = Enemy()
         enemy.position = self.getPosInLobby()
         self.enemies.append(enemy)
         self.addChild(enemy)
