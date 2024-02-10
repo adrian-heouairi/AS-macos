@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         
-        for i in 0...1 {
+        for _ in 0...1 {
             self.addEnemy()
         }
         
@@ -111,7 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         case 0x31: // Space
             if self.bullets.count < 5 {
-                var bullet = Bullet()
+                let bullet = Bullet()
                 let bulletX = self.spaceCraft.position.x + 200
                 bullet.position = CGPoint(x: bulletX, y: self.spaceCraft.position.y)
                 self.bullets.append(bullet)
