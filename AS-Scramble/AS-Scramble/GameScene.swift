@@ -77,7 +77,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if collision == 1 | 2 {
             self.removeAllChildren()
-            
             let gameOverLabel = SKLabelNode()
             gameOverLabel.text = "Game Over"
             gameOverLabel.fontSize = 80
@@ -105,6 +104,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             //enemy.position = self.getPosInLobby()
             //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
+        } else if collision == 1 | 8 {
+            self.removeAllChildren()
+            let gameOverLabel = SKLabelNode()
+            gameOverLabel.text = "Game Over"
+            gameOverLabel.fontSize = 80
+            gameOverLabel.fontColor = SKColor.white
+            gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+            self.addChild(gameOverLabel)
         }
     }
     
