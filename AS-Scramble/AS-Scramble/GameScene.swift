@@ -68,8 +68,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        self.addChild(Bullet())
-        
         //self.scaleMode = .resizeFill
         
         scoreLabel.text = "Score: \(self.score)"
