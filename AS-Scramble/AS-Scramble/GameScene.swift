@@ -57,7 +57,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         for _ in 0...Constants.NB_MOUNTAINS + 2 {
-            
+            let mountain = Mountain()
+            mountain.position = CGPoint(x: <#T##CGFloat#>, y: <#T##CGFloat#>)
         }
         
         for _ in 0...1 {
