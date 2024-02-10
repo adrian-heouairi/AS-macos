@@ -94,7 +94,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.addChild(mountain)
         }
         
-        for _ in 0...1 {
+        for _ in 1...Constants.ENEMIES_NB {
             self.addEnemy()
         }
         
@@ -137,31 +137,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
-        case 0x7D: // Down
+        case Constants.KeyCodes.DOWN.rawValue: // Down
             if !spaceCraft.hasActions() {
                 let moveAction = SKAction.moveBy(x: 0, y: -35, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case 0x7E: // Up
+        case Constants.KeyCodes.UP.rawValue: // Up
             if !spaceCraft.hasActions() && (spaceCraft.position.y + spaceCraft.size.height / 2 < self.size.height / 2 - 50) {
                 let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case 123: // Left
+        case Constants.KeyCodes.LEFT.rawValue: // Left
             if !spaceCraft.hasActions() && (spaceCraft.position.x > -self.size.width / 2 + 100) {
                 let moveAction = SKAction.moveBy(x: -35, y: 0, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case 124: // Right
+        case Constants.KeyCodes.RIGHT.rawValue: // Right
             if !spaceCraft.hasActions() && (spaceCraft.position.x < self.size.width / 2 - self.spaceCraft.size.width) {
                 let moveAction = SKAction.moveBy(x: 35, y: 0, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case 0x31: // Space
+        case Constants.KeyCodes.SPACE.rawValue: // Space
             if !self.gameOver && self.bullets.count < 5 {
                 let bullet = Bullet()
                 let bulletX = self.spaceCraft.position.x + 50

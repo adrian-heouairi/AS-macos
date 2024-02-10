@@ -10,7 +10,7 @@ import SpriteKit
 
 class Enemy: SKSpriteNode {
     init() {
-        let size = CGSize(width: 100, height: 100)
+        let size = CGSize(width: Constants.ENEMY_WIDTH, height: Constants.ENEMY_HEIGHT)
         super.init(texture: SKTexture(imageNamed: "enemy"), color: .black, size: size)
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.affectedByGravity = false
@@ -18,7 +18,7 @@ class Enemy: SKSpriteNode {
         self.physicsBody?.linearDamping = 0
         self.physicsBody?.angularDamping = 0
         self.physicsBody?.friction = 0
-        self.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
+        self.physicsBody?.velocity = Constants.ENEMY_VELOCITY
         
         self.physicsBody?.categoryBitMask = 2
         self.physicsBody?.collisionBitMask = 0
