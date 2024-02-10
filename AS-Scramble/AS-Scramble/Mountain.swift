@@ -13,7 +13,7 @@ class Mountain: SKSpriteNode {
         let size = CGSize(width: Constants.MOUNTAIN_WIDTH, height: CGFloat.random(in: 50.0...768 / 4))
         super.init(texture: SKTexture(imageNamed: "mountain"), color: .black, size: size)
         self.anchorPoint = CGPoint(x: 0.5, y: 0)
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: Constants.MOUNTAIN_WIDTH, height: ))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: Constants.MOUNTAIN_WIDTH, height: size.height + 300))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.mass = 0
         self.physicsBody?.linearDamping = 0
