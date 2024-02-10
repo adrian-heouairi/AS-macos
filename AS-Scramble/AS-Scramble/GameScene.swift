@@ -56,6 +56,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         
+        for _ in 0...Constants.NB_MOUNTAINS + 2 {
+            
+        }
+        
         for _ in 0...1 {
             self.addEnemy()
         }
