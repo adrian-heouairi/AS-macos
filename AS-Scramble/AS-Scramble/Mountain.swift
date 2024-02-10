@@ -23,6 +23,8 @@ class Mountain: SKSpriteNode {
         self.physicsBody?.categoryBitMask = 8
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = 1
+        
+        self.anchorPoint = CGPoint(x: 0.5, y: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
