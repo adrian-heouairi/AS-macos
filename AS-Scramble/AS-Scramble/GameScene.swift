@@ -202,6 +202,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for m in mountains {
             if Int(m.position.x) < xStart {
                 m.position = CGPoint(x: -CGFloat(xStart), y: m.position.y)
+                m.size = CGSize(width: m.size.width, height: CGFloat.random(in:-self.size.height / 2 ... -self.size.height/8))
+                m.physicsBody = Constants.initializePhBody(width: Int(Constants.MOUNTAIN_WIDTH),
+                                                           height: Int(size.height) + 150,
+                                                           velocity: Constants.MOUNTAIN_VELOCITY,
+                                                           categoryBitMask: UInt32(Constants.MOUNTAIN_CATEGORY),
+                                                           collisionBitMask: UInt32(Constants.SPACESHIP_CATEGORY),
+                                                           contactTestMask: UInt32(Constants.SPACESHIP_CATEGORY))
+                
             }
         }
     }
