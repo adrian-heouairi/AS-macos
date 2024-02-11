@@ -13,7 +13,7 @@ class Constants {
     public static let NB_MOUNTAINS_ON_SCREEN = 10
     public static let REAL_NB_MOUNTAINS = NB_MOUNTAINS_ON_SCREEN + 2
     public static let MOUNTAIN_WIDTH = CGFloat(SCENE_WIDTH / NB_MOUNTAINS_ON_SCREEN + 30)
-    public static let MOUNTAIN_VELOCITY = CGVector(dx: 300, dy: 0)
+    public static let MOUNTAIN_VELOCITY = CGVector(dx: -150, dy: 0)
     
     public static let ENEMIES_NB = 5
     
