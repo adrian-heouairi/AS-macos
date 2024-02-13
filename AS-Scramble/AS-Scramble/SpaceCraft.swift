@@ -1,30 +1,17 @@
-//
-//  Enemy.swift
-//  AS-Scramble
-//
-//  Created by user248197 on 2/7/24.
-//
-
 import SpriteKit
 
 class SpaceCraft: SKSpriteNode {
     init() {
-        let size = CGSize(width:Constants.SPACESHIP_WIDTH, height:Constants.SPACESHIP_HEIGHT)
+        let size = CGSize(width: Constants.SPACECRAFT_WIDTH, height: Constants.SPACECRAFT_HEIGHT)
         super.init(texture: SKTexture(imageNamed: "spacecraft"), color: .black, size: size)
-        self.physicsBody = SKPhysicsBody(rectangleOf: size)
-        
-        self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.mass = 0
-        self.physicsBody?.linearDamping = 0
-        self.physicsBody?.angularDamping = 0
-        self.physicsBody?.friction = 0
-        //self.physicsBody?.velocity = CGVector(dx: 300, dy: 0)
+        self.physicsBody = Constants.initializePhBody(width: Int(size.width),
+                                                      height: Int(size.height),
+                                                      velocity: CGVector(dx: 0, dy: 0),
+                                                      categoryBitMask: UInt32(Constants.SPACECRAFT_CATEGORY),
+                                                      collisionBitMask: 0,
+                                                      contactTestMask: UInt32(Constants.ENEMY_CATEGORY | Constants.MOUNTAIN_CATEGORY))
         
         self.zPosition = 1
-        
-        self.physicsBody?.categoryBitMask = 1
-        self.physicsBody?.collisionBitMask = 8
-        self.physicsBody?.contactTestBitMask = 2 | 8
     }
     
     required init?(coder aDecoder: NSCoder) {

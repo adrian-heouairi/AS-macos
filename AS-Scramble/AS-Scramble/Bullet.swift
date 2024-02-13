@@ -1,11 +1,3 @@
-//
-//  Enemy.swift
-//  AS-Scramble
-//
-//  Created by user248197 on 2/7/24.
-//
-
-
 import SpriteKit
 
 class Bullet: SKSpriteNode {
@@ -16,7 +8,7 @@ class Bullet: SKSpriteNode {
                                                       height: Int(size.height),
                                                       velocity: Constants.BULLET_VELOCITY,
                                                       categoryBitMask: UInt32(Constants.BULLET_CATEGORY),
-                                                      collisionBitMask: UInt32(Constants.ENEMY_CATEGORY | Constants.MOUNTAIN_CATEGORY),
+                                                      collisionBitMask: 0,
                                                       contactTestMask: UInt32(Constants.ENEMY_CATEGORY | Constants.MOUNTAIN_CATEGORY))
         
         self.zPosition = 0

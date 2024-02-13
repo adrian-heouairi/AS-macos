@@ -1,10 +1,3 @@
-//
-//  GameScene.swift
-//  AS-Scramble
-//
-//  Created by user248197 on 2/5/24.
-//
-
 import SpriteKit
 import GameplayKit
 
@@ -29,12 +22,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverLabel.text = "Game Over"
         gameOverLabel.fontSize = 120
         gameOverLabel.fontColor = SKColor.white
-        gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        //gameOverLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.addChild(gameOverLabel)
     }
     
     func posIntersectsEnemy(_ pos: CGPoint) -> Bool {
-        let rectangle = CGRect(x: pos.x, y: pos.y, width: 300, height: 300)
+        let rectangle = CGRect(x: pos.x, y: pos.y, width: CGFloat(Constants.ENEMY_WIDTH * 2), height: CGFloat(Constants.ENEMY_HEIGHT * 2))
         
         for e in enemies {
             if e.frame.intersects(rectangle) {
@@ -48,8 +41,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func getPosInLobby() -> CGPoint {
         var pos = CGPoint(x: 0, y: 0)
         repeat {
-            pos.x = self.size.width / 2 + CGFloat.random(in: 100...500)
-            pos.y = CGFloat.random(in: -self.size.height / 4 + 100...self.size.height / 2 - 100)
+            pos.x = CGFloat.random(in: Constants.LOBBY_X_START...Constants.LOBBY_X_END)
+            pos.y = CGFloat.random(in: Constants.LOBBY_Y_START...Constants.LOBBY_Y_END)
         } while posIntersectsEnemy(pos)
         
         return pos
@@ -89,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in 0...Constants.REAL_NB_MOUNTAINS {
             let mountain = Mountain()
             let xStart = -1 * Int(Constants.MOUNTAIN_WIDTH) * Constants.REAL_NB_MOUNTAINS / 2
-            mountain.position = CGPoint(x: xStart + i * Int(Constants.MOUNTAIN_WIDTH) - 50, y: -Int(self.size.height) / 2)
+            mountain.position = CGPoint(x: xStart + i * Int(Constants.MOUNTAIN_WIDTH), y: -Int(self.size.height) / 2 + 200)
             self.mountains.append(mountain)
             self.addChild(mountain)
         }
@@ -105,7 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        if collision == Constants.SPACESHIP_CATEGORY | Constants.ENEMY_CATEGORY {
+        if collision == Constants.SPACECRAFT_CATEGORY | Constants.ENEMY_CATEGORY {
             self.launchGameOver()
         } else if collision == Constants.ENEMY_CATEGORY | Constants.BULLET_CATEGORY {
             self.incrementScore()
@@ -126,17 +119,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             enemy.removeFromParent()
             
             self.addEnemy()
-            
-            //enemy.position = self.getPosInLobby()
-            //enemy.physicsBody?.velocity = CGVector(dx: -150, dy: 0)
-        } else if collision == Constants.SPACESHIP_CATEGORY | Constants.MOUNTAIN_CATEGORY {
+        } else if collision == Constants.SPACECRAFT_CATEGORY | Constants.MOUNTAIN_CATEGORY {
             self.launchGameOver()
         } else if collision == Constants.BULLET_CATEGORY | Constants.MOUNTAIN_CATEGORY {
-            var bullet : Bullet
+            let bullet: Bullet
             if contact.bodyA.categoryBitMask == Constants.BULLET_CATEGORY {
                 bullet = contact.bodyA.node as! Bullet
             } else {
-                bullet = contact.bodyB.node as! Bullet            }
+                bullet = contact.bodyB.node as! Bullet
+            }
             
             self.bullets.remove(at: self.bullets.firstIndex(of: bullet)!)
             bullet.removeFromParent()
@@ -145,32 +136,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
-        case Constants.KeyCodes.DOWN.rawValue: // Down
+        case Constants.KeyCodes.DOWN.rawValue:
             if !spaceCraft.hasActions() {
-                let moveAction = SKAction.moveBy(x: 0, y: -35, duration: 0)
+                let moveAction = SKAction.moveBy(x: 0, y: -Constants.SPACECRAFT_MOVE_BY, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case Constants.KeyCodes.UP.rawValue: // Up
-            if !spaceCraft.hasActions() && (spaceCraft.position.y + spaceCraft.size.height / 2 < self.size.height / 2 - 50) {
-                let moveAction = SKAction.moveBy(x: 0, y: 35, duration: 0)
+        case Constants.KeyCodes.UP.rawValue:
+            if !spaceCraft.hasActions() && (spaceCraft.position.y < self.size.height / 2 - 50 - spaceCraft.size.height / 2) {
+                let moveAction = SKAction.moveBy(x: 0, y: Constants.SPACECRAFT_MOVE_BY, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case Constants.KeyCodes.LEFT.rawValue: // Left
+        case Constants.KeyCodes.LEFT.rawValue:
             if !spaceCraft.hasActions() && (spaceCraft.position.x > -self.size.width / 2 + 100) {
-                let moveAction = SKAction.moveBy(x: -35, y: 0, duration: 0)
+                let moveAction = SKAction.moveBy(x: -Constants.SPACECRAFT_MOVE_BY, y: 0, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case Constants.KeyCodes.RIGHT.rawValue: // Right
-            if !spaceCraft.hasActions() && (spaceCraft.position.x < self.size.width / 2 - self.spaceCraft.size.width) {
-                let moveAction = SKAction.moveBy(x: 35, y: 0, duration: 0)
+        case Constants.KeyCodes.RIGHT.rawValue:
+            if !spaceCraft.hasActions() && (spaceCraft.position.x < self.size.width / 2 - self.spaceCraft.size.width - 50) {
+                let moveAction = SKAction.moveBy(x: Constants.SPACECRAFT_MOVE_BY, y: 0, duration: 0)
                 self.spaceCraft.run(moveAction)
             }
             
-        case Constants.KeyCodes.SPACE.rawValue: // Space
-            if !self.gameOver && self.bullets.count < 5 {
+        case Constants.KeyCodes.SPACE.rawValue:
+            if !self.gameOver && self.bullets.count < 2 {
                 let bullet = Bullet()
                 let bulletX = self.spaceCraft.position.x + 50
                 bullet.position = CGPoint(x: bulletX, y: self.spaceCraft.position.y)
@@ -198,18 +189,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        let xStart = -1 * Int(Constants.MOUNTAIN_WIDTH) * Constants.REAL_NB_MOUNTAINS / 2
+        let xStart = CGFloat(-1 * Int(Constants.MOUNTAIN_WIDTH) * Constants.REAL_NB_MOUNTAINS / 2)
         for m in mountains {
-            if Int(m.position.x) < xStart {
-                m.position = CGPoint(x: -CGFloat(xStart), y: m.position.y)
-                m.size = CGSize(width: m.size.width, height: CGFloat.random(in:-self.size.height / 2 ... -self.size.height/8))
-                m.physicsBody = Constants.initializePhBody(width: Int(Constants.MOUNTAIN_WIDTH),
-                                                           height: Int(size.height) + 150,
-                                                           velocity: Constants.MOUNTAIN_VELOCITY,
-                                                           categoryBitMask: UInt32(Constants.MOUNTAIN_CATEGORY),
-                                                           collisionBitMask: UInt32(Constants.SPACESHIP_CATEGORY),
-                                                           contactTestMask: UInt32(Constants.SPACESHIP_CATEGORY))
-                
+            if m.position.x < xStart {
+                self.mountains.remove(at: self.mountains.firstIndex(of: m)!)
+                m.removeFromParent()
             }
         }
     }
