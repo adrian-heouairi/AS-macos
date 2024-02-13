@@ -7,11 +7,11 @@ class Constants {
     
     public static let NB_MOUNTAINS_ON_SCREEN = 10
     public static let REAL_NB_MOUNTAINS = NB_MOUNTAINS_ON_SCREEN + 2
-    public static let MOUNTAIN_WIDTH = CGFloat(SCENE_WIDTH / NB_MOUNTAINS_ON_SCREEN + 30)
+    public static let MOUNTAIN_WIDTH = CGFloat(SCENE_WIDTH / NB_MOUNTAINS_ON_SCREEN + 100)
     public static let MOUNTAIN_VELOCITY = CGVector(dx: -150, dy: 0)
     
-    public static let MOUNTAIN_MIN_HEIGHT = 50.0
-    public static let MOUNTAIN_MAX_HEIGHT = CGFloat(SCENE_HEIGHT / 4)
+    public static let MOUNTAIN_MIN_HEIGHT = 25.0
+    public static let MOUNTAIN_MAX_HEIGHT = CGFloat(SCENE_HEIGHT / 3)
     
     // The lobby contains all positions where an enemy can appear (the center of the enemy is in the lobby, the enemy itself might have parts outside of the lobby)
     

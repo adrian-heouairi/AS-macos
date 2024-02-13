@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = "Score: \(self.score)"
         scoreLabel.fontSize = 40
         scoreLabel.fontColor = SKColor.white
-        scoreLabel.position = CGPoint(x: self.size.width / 2 - 100, y: self.size.height / 2 - 50)
+        scoreLabel.position = CGPoint(x: self.size.width / 2 - 125, y: self.size.height / 2 - 50)
         scoreLabel.zPosition = 0
         self.addChild(scoreLabel)
         
@@ -82,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in 0...Constants.REAL_NB_MOUNTAINS {
             let mountain = Mountain()
             let xStart = -1 * Int(Constants.MOUNTAIN_WIDTH) * Constants.REAL_NB_MOUNTAINS / 2
-            mountain.position = CGPoint(x: xStart + i * Int(Constants.MOUNTAIN_WIDTH), y: -Int(self.size.height) / 2 + 200)
+            mountain.position = CGPoint(x: CGFloat(xStart + i * Int(Constants.MOUNTAIN_WIDTH)), y: CGFloat(-1 * self.size.height / 2 + mountain.size.height / 2))
             self.mountains.append(mountain)
             self.addChild(mountain)
         }
@@ -194,6 +194,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if m.position.x < xStart {
                 self.mountains.remove(at: self.mountains.firstIndex(of: m)!)
                 m.removeFromParent()
+                
+                let newMountain = Mountain()
+                newMountain.position = CGPoint(x: -xStart + Constants.MOUNTAIN_WIDTH, y: CGFloat(-1 * self.size.height / 2 + newMountain.size.height / 2))
+                self.mountains.append(newMountain)
+                self.addChild(newMountain)
             }
         }
     }
