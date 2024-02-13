@@ -29,7 +29,7 @@ class Constants {
     public static let BULLET_VELOCITY = CGVector(dx: 300, dy: 0)
     
     
-    enum KeyCodes:UInt16 {
+    enum KeyCodes: UInt16 {
         case UP =  0x7E
         case DOWN = 0x7D
         case RIGHT = 0x7C
@@ -41,10 +41,10 @@ class Constants {
     public static let ENEMY_CATEGORY = 2
     public static let BULLET_CATEGORY = 4
     public static let MOUNTAIN_CATEGORY = 8
-
+    
     public static func initializePhBody(width phWidth:Int,height phHeight:Int, velocity:CGVector, categoryBitMask:UInt32, collisionBitMask:UInt32, contactTestMask:UInt32) -> SKPhysicsBody {
         let res = SKPhysicsBody(rectangleOf: CGSize(width: phWidth, height: phHeight))
-            res.affectedByGravity = false
+        res.affectedByGravity = false
         res.mass = 0
         res.linearDamping = 0
         res.angularDamping = 0
@@ -57,5 +57,5 @@ class Constants {
         return res
         
     }
-
+    
 }

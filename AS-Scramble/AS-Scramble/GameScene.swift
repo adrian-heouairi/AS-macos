@@ -137,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 bullet = contact.bodyA.node as! Bullet
             } else {
                 bullet = contact.bodyB.node as! Bullet            }
-        
+            
             self.bullets.remove(at: self.bullets.firstIndex(of: bullet)!)
             bullet.removeFromParent()
         }
@@ -177,7 +177,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.bullets.append(bullet)
                 self.addChild(bullet)
             }
-                
+            
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }

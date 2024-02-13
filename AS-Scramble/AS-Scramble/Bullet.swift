@@ -18,7 +18,7 @@ class Bullet: SKSpriteNode {
                                                       categoryBitMask: UInt32(Constants.BULLET_CATEGORY),
                                                       collisionBitMask: UInt32(Constants.ENEMY_CATEGORY | Constants.MOUNTAIN_CATEGORY),
                                                       contactTestMask: UInt32(Constants.ENEMY_CATEGORY | Constants.MOUNTAIN_CATEGORY))
-    
+        
         self.zPosition = 0
     }
     
