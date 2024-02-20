@@ -96,6 +96,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node == nil || contact.bodyB.node == nil {
+            return
+        }
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == Constants.SPACECRAFT_CATEGORY | Constants.ENEMY_CATEGORY {
