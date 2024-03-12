@@ -8,7 +8,7 @@ struct DataListView: View {
     }
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             List {
                 ForEach(items) {
                     d in
@@ -23,7 +23,7 @@ struct DataListView: View {
                     }
                 }
             }
-        }
+        //}
     }
     
 }
