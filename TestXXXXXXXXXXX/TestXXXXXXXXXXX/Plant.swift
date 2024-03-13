@@ -1,6 +1,8 @@
-import Foundation
+// Dataset from https://ankiweb.net/shared/info/435610460 by tandena.nelson@gmail.com
 
 // [ ..., { "id": 107, "filename": "107.jpg", "common_name": "Autumn olive", "scientific_name": "Eleaegnus umbellata", "code": "ELUM" }, ... ]
+
+import Foundation
 
 struct Plant : Hashable, Codable, Identifiable {
     var id: Int

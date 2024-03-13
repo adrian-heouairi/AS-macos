@@ -1,20 +1,5 @@
 import SwiftUI
 
-// Chooses at most n plants at random
-func chooseNRandomPlants(manager: DataManager, n: Int) -> [Plant] {
-    if n <= 0 {
-        return []
-    }
-    
-    let shuffledPlants = manager.plants.shuffled()
-    
-    if n >= shuffledPlants.count {
-        return shuffledPlants
-    } else {
-        return Array(shuffledPlants.prefix(n))
-    }
-}
-
 struct LearningSessionSettingsView: View {
     @ObservedObject var manager : DataManager
     
@@ -30,15 +15,19 @@ struct LearningSessionSettingsView: View {
             
             Text("Number of Cards to Review:")
             
-            TextField("Number of Cards", value: $numberOfCards, formatter: NumberFormatter())
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
+            HStack {
+                Spacer()
+                TextField("Number of Cards", value: $numberOfCards, formatter: NumberFormatter())
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                Spacer()
+            }
             
             Spacer()
             
             if numberOfCards > 0 {
-                NavigationLink(destination: LearnView(plants: chooseNRandomPlants(manager: manager, n: numberOfCards))) {
+                NavigationLink(destination: LearnView(manager: manager, numberOfCards: numberOfCards)) {
                     Text("Start Learning Session")
                         .padding()
                         .background(Color.green)
@@ -56,4 +45,8 @@ struct LearningSessionSettingsView: View {
         }
         .navigationTitle("Learning Session Settings")
     }
+}
+
+#Preview {
+    LearningSessionSettingsView(manager: DataManager(preview: true))
 }

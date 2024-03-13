@@ -13,14 +13,11 @@
 		31B814622BA20F3C008FF14A /* LearningSessionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B814612BA20F3C008FF14A /* LearningSessionSettingsView.swift */; };
 		31B814642BA217BA008FF14A /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B814632BA217BA008FF14A /* LearnView.swift */; };
 		8D3D498E2B878379008A10B7 /* TestXXXXXXXXXXXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D498D2B878379008A10B7 /* TestXXXXXXXXXXXApp.swift */; };
-		8D3D49902B878379008A10B7 /* A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D498F2B878379008A10B7 /* A.swift */; };
 		8D3D49922B87837C008A10B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D49912B87837C008A10B7 /* Assets.xcassets */; };
 		8D3D49952B87837C008A10B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3D49942B87837C008A10B7 /* Preview Assets.xcassets */; };
 		8D3D499C2B87860B008A10B7 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D499B2B87860B008A10B7 /* Plant.swift */; };
 		8D3D499F2B87879A008A10B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D499E2B87879A008A10B7 /* DataManager.swift */; };
 		8D3D49A12B878CE3008A10B7 /* DataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D49A02B878CE2008A10B7 /* DataListView.swift */; };
-		8D3D49A32B878DF4008A10B7 /* B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D49A22B878DF4008A10B7 /* B.swift */; };
-		8D3D49A52B878FDD008A10B7 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D49A42B878FDD008A10B7 /* C.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,14 +28,11 @@
 		31B814632BA217BA008FF14A /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		8D3D498A2B878379008A10B7 /* TestXXXXXXXXXXX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestXXXXXXXXXXX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3D498D2B878379008A10B7 /* TestXXXXXXXXXXXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestXXXXXXXXXXXApp.swift; sourceTree = "<group>"; };
-		8D3D498F2B878379008A10B7 /* A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A.swift; sourceTree = "<group>"; };
 		8D3D49912B87837C008A10B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D3D49942B87837C008A10B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8D3D499B2B87860B008A10B7 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		8D3D499E2B87879A008A10B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8D3D49A02B878CE2008A10B7 /* DataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListView.swift; sourceTree = "<group>"; };
-		8D3D49A22B878DF4008A10B7 /* B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B.swift; sourceTree = "<group>"; };
-		8D3D49A42B878FDD008A10B7 /* C.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +67,7 @@
 			children = (
 				8D3D498D2B878379008A10B7 /* TestXXXXXXXXXXXApp.swift */,
 				312800962BA0EB3200394CDB /* TitleScreenView.swift */,
-				8D3D498F2B878379008A10B7 /* A.swift */,
-				8D3D49A22B878DF4008A10B7 /* B.swift */,
 				8D3D49A02B878CE2008A10B7 /* DataListView.swift */,
-				8D3D49A42B878FDD008A10B7 /* C.swift */,
 				8D3D499B2B87860B008A10B7 /* Plant.swift */,
 				8D3D499E2B87879A008A10B7 /* DataManager.swift */,
 				31B814632BA217BA008FF14A /* LearnView.swift */,
@@ -169,12 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				31B814622BA20F3C008FF14A /* LearningSessionSettingsView.swift in Sources */,
-				8D3D49A32B878DF4008A10B7 /* B.swift in Sources */,
 				8D3D49A12B878CE3008A10B7 /* DataListView.swift in Sources */,
 				31B814642BA217BA008FF14A /* LearnView.swift in Sources */,
-				8D3D49902B878379008A10B7 /* A.swift in Sources */,
 				8D3D499F2B87879A008A10B7 /* DataManager.swift in Sources */,
-				8D3D49A52B878FDD008A10B7 /* C.swift in Sources */,
 				312800992BA0EF5400394CDB /* PlantDetailsView.swift in Sources */,
 				312800972BA0EB3200394CDB /* TitleScreenView.swift in Sources */,
 				8D3D499C2B87860B008A10B7 /* Plant.swift in Sources */,

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct PlantDetailsView: View {
     let plant: Plant
+    
+    let showText: Bool
 
     var body: some View {
         VStack {
@@ -11,14 +13,11 @@ struct PlantDetailsView: View {
                 .frame(width: 400, height: 400)
                 .padding()
             
-            Text("Common Name: \(plant.commonName)")
-                .padding()
-            
-            Text("Scientific Name: \(plant.scientificName)")
-                .padding()
-            
-            Text("Code: \(plant.code)")
-                .padding()
+            if showText {
+                Text("Common Name: \(plant.commonName)")
+                Text("Scientific Name: \(plant.scientificName)")
+                Text("Code: \(plant.code)")
+            }
             
             Spacer()
         }
@@ -27,5 +26,5 @@ struct PlantDetailsView: View {
 }
 
 #Preview {
-    PlantDetailsView(plant: Plant(id: 113, filename: "113", commonName: "Thorny olive", scientificName: "Elaeagnus pungens", code: "ELPU2"))
+    PlantDetailsView(plant: Plant(id: 113, filename: "113", commonName: "Thorny olive", scientificName: "Elaeagnus pungens", code: "ELPU2"), showText: true)
 }

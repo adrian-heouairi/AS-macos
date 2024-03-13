@@ -8,12 +8,11 @@ struct DataListView: View {
     }
     
     var body: some View {
-        //NavigationView {
             List {
                 ForEach(items) {
                     d in
                     NavigationLink {
-                        PlantDetailsView(plant: d)
+                        PlantDetailsView(plant: d, showText: true)
                     } label: {
                         HStack {
                             Image(d.filename).resizable().aspectRatio(contentMode: .fit)
@@ -23,7 +22,6 @@ struct DataListView: View {
                     }
                 }
             }
-        //}
     }
     
 }
