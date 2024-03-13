@@ -10,7 +10,7 @@ struct TitleScreenView: View {
                     .font(.largeTitle)
                     .padding()
                 
-                NavigationLink(destination: DataListView(manager: manager)) {
+                NavigationLink(destination: LearningSessionSettingsView(manager: manager)) {
                     Text("Learn")
                         .padding()
                         .background(Color.green)
@@ -20,7 +20,7 @@ struct TitleScreenView: View {
                 .padding()
                 
                 NavigationLink(destination: DataListView(manager: manager)) {
-                    Text("List of plants")
+                    Text("List of Plants")
                         .padding()
                         .background(Color.green)
                         .foregroundColor(.white)

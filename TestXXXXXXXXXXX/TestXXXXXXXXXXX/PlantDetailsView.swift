@@ -12,15 +12,12 @@ struct PlantDetailsView: View {
                 .padding()
             
             Text("Common Name: \(plant.commonName)")
-                .font(.headline)
                 .padding()
             
             Text("Scientific Name: \(plant.scientificName)")
-                .font(.headline)
                 .padding()
             
             Text("Code: \(plant.code)")
-                .font(.headline)
                 .padding()
             
             Spacer()
