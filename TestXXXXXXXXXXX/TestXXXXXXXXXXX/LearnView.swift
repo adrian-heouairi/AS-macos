@@ -35,7 +35,7 @@ struct LearnView: View {
         VStack {
             Spacer()
             
-            Text("\(currentIndex + 1) / \(numberOfCards)")
+            Text("\(currentIndex + 1) / \(plants.count)")
             
             if showAnswer {
                 PlantDetailsView(plant: plants[currentIndex], showText: true)
